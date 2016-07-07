@@ -12,6 +12,8 @@ angular.module('coolcatzApp')
     $scope.messages = [];
     var profile = $firebaseObject(Ref.child('users/'+user.uid));
     profile.$bindTo($scope, 'profile');
+
+    
     
     $scope.viewGym = function(visits) {
     	// TODO
