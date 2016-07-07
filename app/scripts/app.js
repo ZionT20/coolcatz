@@ -17,5 +17,5 @@ angular.module('coolcatzApp', [
     'ngTouch',
     'firebase',
     'firebase.ref',
-    'firebase.auth'
+    'firebase.auth',
   ]);
