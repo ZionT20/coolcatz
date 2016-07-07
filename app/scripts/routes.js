@@ -83,7 +83,7 @@ angular.module('coolcatzApp')
         controller: 'ViewCtrl'
       })
       .whenAuthenticated('/home', {
-        templateUrl: 'index.html',
+        templateUrl: 'login.html',
         controller: 'HomeCtrl'
       })
       .otherwise({redirectTo: '/'});

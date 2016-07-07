@@ -8,17 +8,21 @@
  */
 angular.module('coolcatzApp')
   .controller('LoginCtrl', function ($scope, Auth, $location, $q, Ref, $timeout) {
+
     $scope.oauthLogin = function(provider) {
       $scope.err = null;
       Auth.$authWithOAuthPopup(provider, {rememberMe: true}).then(redirect, showError);
     };
 
     $scope.anonymousLogin = function() {
+      var ref = new Firebase("https://carbon-68abb.firebaseio.com");
       $scope.err = null;
       Auth.$authAnonymously({rememberMe: true}).then(redirect, showError);
     };
 
     $scope.passwordLogin = function(email, pass) {
+      console.log("pass login");
+      
       $scope.err = null;
       Auth.$authWithPassword({email: email, password: pass}, {rememberMe: true}).then(
         redirect, showError
@@ -27,6 +31,7 @@ angular.module('coolcatzApp')
 
     $scope.createAccount = function(email, pass, confirm) {
       $scope.err = null;
+
       if( !pass ) {
         $scope.err = 'Please enter a password';
       }
