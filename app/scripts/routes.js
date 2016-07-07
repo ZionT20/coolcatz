@@ -74,6 +74,14 @@ angular.module('coolcatzApp')
         templateUrl: 'views/account.html',
         controller: 'AccountCtrl'
       })
+      .whenAuthenticated('/add', {
+        templateUrl: 'views/addData.html',
+        controller: 'AddCtrl'
+      })
+      .whenAuthenticated('/view', {
+        templateUrl: 'views/viewData.html',
+        controller: 'ViewCtrl'
+      })
       .otherwise({redirectTo: '/'});
   }])
 
